@@ -5,7 +5,7 @@ function togglePanel(buttonId, panelClass) {
     const addToggle = document.querySelector(`#${buttonId}`)
     const photoPanel = document.querySelector(`.${panelClass}`)
     addToggle.addEventListener("click", () => {
-        console.log("it's a button!")
+        //console.log("it's a button!")
         photoPanel.classList.toggle("hide")
     })//end of toggle Event Listener
 }//end of togglePanel function
@@ -22,12 +22,12 @@ function addPhotosToPanel(imageSRC, panelParam, photoTitle, photoHeight) {
     photo.title = photoTitle;
     photo.style.height = photoHeight + "px";
     photo.addEventListener("mouseover", () => {
-        console.log("mouseover works!"),
+        //console.log("mouseover works!"),
             photo.style.filter = "blur(2px)",
             setTimeout(() => {
                 photo.style.filter = "blur(0px)";
-                console.log("timer works")
-            }, 500)// end of Timeout
+                //console.log("timer works")
+            }, 500)// end of Timeout, so photo does not stay blurred on mouseover 
     })// end of mouse over event listener
     let photoQuote = document.createElement("p")
     getQuote(photoQuote)
@@ -36,7 +36,7 @@ function addPhotosToPanel(imageSRC, panelParam, photoTitle, photoHeight) {
         fetch("https://api.quotable.io/random")
             .then(response => response.json())
             .then(randomQuote => {
-                console.log(randomQuote)
+                //console.log(randomQuote)
                 photoQuote.textContent = randomQuote.content + "   || " + randomQuote.author
                 document.querySelector(`.${panelParam}`).append(photo, photoQuote);
             })//end of get fetch random quote second .then
@@ -95,7 +95,7 @@ function getAllLocations() {
     fetch("http://localhost:3000/locations")
         .then(resp => resp.json())
         .then(arrayLocations => {
-            console.log(arrayLocations),
+            //console.log(arrayLocations),
                 arrayLocations.forEach(makeSuggestions)// existing locations get put on list
         })//end of second .then in fetch get all locations
 }//end of get All Locations fetch function

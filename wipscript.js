@@ -1,11 +1,12 @@
 console.log("we are connected")
 
-// toggle function is working
+// TOGGLE FUNCTION
+// click event
 function togglePanel(buttonId, panelClass) {
     const addToggle = document.querySelector(`#${buttonId}`)
     const photoPanel = document.querySelector(`.${panelClass}`)
     addToggle.addEventListener("click", () => {
-        console.log("it's a button!")
+        //console.log("it's a button!")
         photoPanel.classList.toggle("hide")
     })//end of toggle Event Listener
 }//end of togglePanel function
@@ -14,7 +15,8 @@ togglePanel("engagement", "panel1")
 togglePanel("family", "panel2")
 togglePanel("settings", "panel3")
 
-//takes image and quote and puts it on its panel
+//IMAGE & QUOTE PUT ON PANEL
+//mouseover event and access public API
 function addPhotosToPanel(imageSRC, panelParam, photoTitle, photoHeight) {
     let photo = document.createElement("img");
     photo.src = imageSRC;
@@ -22,12 +24,12 @@ function addPhotosToPanel(imageSRC, panelParam, photoTitle, photoHeight) {
     photo.title = photoTitle;
     photo.style.height = photoHeight + "px";
     photo.addEventListener("mouseover", () => {
-        console.log("mouseover works!"),
+        //console.log("mouseover works!"),
             photo.style.filter = "blur(2px)",
             setTimeout(() => {
                 photo.style.filter = "blur(0px)";
-                console.log("timer works")
-            }, 500)// end of Timeout
+                //console.log("timer works")
+            }, 500)// end of Timeout, so photo does not stay blurred on mouseover 
     })// end of mouse over event listener
     let photoQuote = document.createElement("p")
     getQuote(photoQuote)
@@ -66,7 +68,11 @@ addPhotosToPanel("photos/landscape.jpg", "panel3", "Kauai Landscape", 650)
 addPhotosToPanel("photos/blueflowers.jpg", "panel3", "Blue flowers in Kauai", 900)
 //end of adding photos to their panels
 
-//the suggestions form, will only work when local server is running 
+
+
+//THE SUGGESTION FORM
+//submit event
+//will only work when local server is running 
 document.querySelector("#suggestionForm").addEventListener("submit", handleSubmit)
 
 function handleSubmit(e) {
@@ -95,7 +101,7 @@ function getAllLocations() {
     fetch("http://localhost:3000/locations")
         .then(resp => resp.json())
         .then(arrayLocations => {
-            console.log(arrayLocations),
+            //console.log(arrayLocations),
                 arrayLocations.forEach(makeSuggestions)// existing locations get put on list
         })//end of second .then in fetch get all locations
 }//end of get All Locations fetch function
