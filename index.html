@@ -1,0 +1,77 @@
+<!-- This is all the required html stuff, declaring it as html version 5 
+    and for the brower to read it as html
+    setting the language as english, bringing in my css style sheet, 
+    what my tab title will be, and connecting the css and javascript
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./style.css">
+        <title>Vinstagram</title>
+        <script defer src="./wipscript.js"></script>
+
+
+<!-- here is the top portion of the site, with the main header VINSTAGRAM and about blurb
+    including a relative link to a photo in the same directory and absolute links to instagram
+-->
+    <body>
+        <h1 id="top"> V I N S T A G R A M </h1>
+
+        <button id ="about"> a b o u t</button>
+            <div class="panel0">
+            <p> My photography philosophy is "half the endeavor is remembering" and my vision is to help people remember through beautifully captured moments. 
+                There are no pricing/rates listed here because my hope is that my photos will be a gift to you and your loved ones. </p>
+            <a href="https://www.instagram.com/vincentjsong/">
+               contact: DM me on instagram.</a>
+            <a href="https://www.instagram.com/vincentjsong/">
+                <img src="photos/vincent.jpg" alt=photo taken of Kauai mountains title="Kauai landscape"
+                height="620">
+                </a>
+            </div>
+        
+
+<!-- the next section is the majority of my menu/panel content, beautiful photos!!
+    it also includes a "jump to top" link where top is located by the id="top" in the h1
+-->
+        
+        <button id="engagement">e n g a g e m e n t</button>
+            <div class="panel1">
+            </div>
+        
+    
+        <button id="family"> f a m i l y</button>
+            <div class="panel2">
+            <a href="#top">jump to top.</a>
+            </div>
+
+        <button id="settings">s e t t i n g s</button>
+            <div class="panel3">
+            <a href="#top">jump to top.</a>
+            </div>
+
+
+
+<!-- I added this section to practice making an unordered list
+-->
+        
+        <h2>l o c a t i o n .  s u g g e s t i o n s</h2>
+            <div class="panel4">
+                <ul id="suggestionList">
+                    <li>Georgetown</li>
+                    <li>Old Town Alexandria</li>
+                    <li>Red Rock Wilderness Overlook</li>
+                    <li>your favorite museum, home, favorite coffee shop</li>
+                </ul>
+                <form id="suggestionForm">
+                    <label for="suggest"> Add location suggestion: </label>
+                    <br>
+                    <br>
+                    <textarea id="userInput"></textarea>
+                    <br>
+                    <button id= "submitButton" type="submit"> submit your suggestion</button>
+                </form>
+            </div>
+        
+
+    </body>
+</html>

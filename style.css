@@ -1,0 +1,113 @@
+/* this is just my background color.
+it's a muted green to match the borders and compliment the naturey or clean feel of Vincent's photos */
+body {
+    background: rgb(135, 153, 135);
+  } 
+
+
+
+#top {
+    color: rgb(255, 255, 255);
+    font-family: "Garamond";
+    text-align: center;
+    font-size: 50 px
+}
+
+label {
+    font-size: 20px;
+    color: black
+}
+
+#userInput {
+    padding: 10px;
+    width: 40%;
+    border-radius: 5px;
+    background-color: rgb(135, 153, 135);
+}
+textarea:focus {
+    outline: 2px solid black
+}
+
+#submitButton {
+    text-align: center;
+    font-family: "Garamond";
+    border: none;
+    background-color: rgb(135, 153, 135);
+    color: black;
+    padding: 10px;
+    font-size: 20px;
+    display: inline-block;
+    transition-duration: 0.4s;
+    margin-left: auto;
+    margin-right: auto;
+}
+#submitButton:hover{
+    background-color: rgb(135, 153, 135);
+    color: white
+}
+
+button {
+    text-align: center;
+    font-family: "Garamond";
+    border: none;
+    background-color: rgb(135, 153, 135);
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    display: inline-block;
+    transition-duration: 0.4s;
+    margin-left: auto;
+    margin-right: auto;
+}
+button:hover {
+    background-color: rgb(135, 153, 135);
+    color: black
+}
+
+p, a {
+    text-align: center;
+    font-family: "Garamond";
+    color:rgb(255, 255, 255);
+    display: in-line;
+}
+
+/* the following styling bits just make my links (using pseudo-class selectors), pricing table, and location list to
+look cleaner than the default. */
+a:link {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style-type: circle;
+    color: white;
+    text-align: center;
+    background:rgba(96, 119, 106, 0.26);
+
+}
+
+li {
+    padding: 10px;
+}
+
+/* this is pretty important styling for my panels, all the toggle items, to be centered*/
+div.panel0, div.panel1, div.panel2, div.panel3, div.panel4 {
+    /* display:none; */
+    text-align: center
+}
+
+.hide{
+    display:none;
+}
+
+img {
+    display: block;
+    margin-top: 20px;
+    margin-bottom:20px;
+   margin-left: auto;
+   margin-right:auto;
+   width:auto;
+   border: 3px solid rgb(29, 41, 31);
+}
