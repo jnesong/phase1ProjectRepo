@@ -1,4 +1,4 @@
-console.log("we are connected to the trial")
+console.log("we are connected")
 
 // toggle function is working
 function togglePanel(buttonId, panelClass) {
@@ -21,6 +21,14 @@ function addPhotosToPanel(imageSRC, panelParam, photoTitle, photoHeight) {
     photo.alt = photoTitle;
     photo.title = photoTitle;
     photo.style.height = photoHeight + "px";
+    photo.addEventListener("mouseover", () => {
+        console.log("mouseover works!"),
+            photo.style.filter = "blur(2px)",
+            setTimeout(() => {
+                photo.style.filter = "blur(0px)";
+                console.log("timer works")
+            }, 500)// end of Timeout
+    })// end of mouse over event listener
     let photoQuote = document.createElement("p")
     getQuote(photoQuote)
     //get fetch quotes from Quotable API
@@ -28,7 +36,7 @@ function addPhotosToPanel(imageSRC, panelParam, photoTitle, photoHeight) {
         fetch("https://api.quotable.io/random")
             .then(response => response.json())
             .then(randomQuote => {
-                console.log(randomQuote)
+                //console.log(randomQuote)
                 photoQuote.textContent = randomQuote.content + "   || " + randomQuote.author
                 document.querySelector(`.${panelParam}`).append(photo, photoQuote);
             })//end of get fetch random quote second .then
@@ -47,7 +55,7 @@ addPhotosToPanel("photos/acengage2.jpg", "panel1", "A & C at the Rust Manor Hous
 addPhotosToPanel("photos/acengage3.jpg", "panel1", "A & C at the Rust Manor House", 800)
 addPhotosToPanel("photos/acengage1.jpg", "panel1", "A & C at the Rust Manor House", 600)
 addPhotosToPanel("photos/family1.jpg", "panel2", "Elderly couple sitting outside", 650)
-addPhotosToPanel("photos/family2.jpg", "panel2", "Elderly couple walking",950)
+addPhotosToPanel("photos/family2.jpg", "panel2", "Elderly couple walking", 950)
 addPhotosToPanel("photos/mombaby1.jpg", "panel2", "Mother holding baby", 900)
 addPhotosToPanel("photos/birthday.jpeg", "panel2", "Girl at one year birthday party", 620)
 addPhotosToPanel("photos/pregnancy2.jpg", "panel2", "Mother with child", 800)
@@ -101,34 +109,3 @@ function makeSuggestions(eachLocation) {
     newLocation.id = eachLocation.id
     ulSuggestions.append(newLocation)
 }//end of make Suggestions function
-
-
-
-
-
-
-
-
-    //MAYBE USE LATER FUNCTIONS
-
-// //get fetch love quotes from Quotable API
-// function getLoveQuote() {
-//     fetch("https://api.quotable.io/random?tags=love")
-//         .then(response => response.json())
-//         .then(randomLoveQuote => {
-//             console.log(randomLoveQuote)
-//         })//end of get fetch random quote second .then
-// }// end of getQuotes function
-
-// let flipPanel = false
-// const addToggle = document.querySelector("#engagement")
-// const photoPanel = document.querySelector(".panel1")
-// addToggle.addEventListener("click", () => {
-//     console.log ("it's a button!")
-//     flipPanel = !flipPanel;
-//     if (flipPanel){
-//         photoPanel.classList.toggle("hide")
-//     } else{
-//         photoPanel.display="block"
-//     }
-// })//end of toggle Event Listener
